@@ -1,0 +1,145 @@
+.weather-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: azure;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+
+input {
+    padding: 10px;
+    width: 95%;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+.weather-card {
+    padding: 20px;
+    text-align: center;
+}
+
+.location h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.location p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.weather-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.weather-icon {
+    width: 80px;
+    height: 80px;
+}
+
+.temperature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.temp-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ff7f50;
+    }
+
+.description {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.additional-info {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #444;
+}
+
+.additional-info p {
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .weather-card {
+        padding: 15px;
+    }
+
+    .weather-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .temp-value {
+        font-size: 2.5rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+}
+ 
+.error-message {
+    color: red;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 16px; 
+    justify-content: flex-start; 
+}
+  
+.box {
+    background-color: azure;
+    color: black;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px; 
+    box-sizing: border-box; 
+    text-align: left;
+    font-size: 18px;
+    min-width: 220px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 5px;
+}  
+  
+@media (max-width: 768px) {
+    .box {
+      flex: 0 1 calc(50% - 16px);
+    }
+}
+  
+@media (max-width: 480px) {
+    .box {
+      flex: 0 1 100%; 
+    }
+}
+  
+.search-input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}

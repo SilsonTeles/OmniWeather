@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common'; 
+import { HttpClientModule } from '@angular/common/http'; 
+import { WeatherComponent } from './components/weather/weather.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [CommonModule, HttpClientModule, WeatherComponent], 
+  template: `<weather-app></weather-app>`,
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'teste-omnichat';
 }

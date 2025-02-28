@@ -1,0 +1,47 @@
+<h1 class="weather-card" style="color:white;"><strong>OmniWeather</strong></h1>
+<div class="search-container">
+    <input type="text" class="search-input" [(ngModel)]="city" (input)="onCityChange()" placeholder="Digite o nome da cidade" id="search-city">
+</div>
+
+<div class="weather-container">
+    <div *ngIf="!loading && weather" class="weather-card">
+        <div class="location">
+            <h1>{{ weather.cityName | titlecase}}</h1>
+        </div>
+        <div class="weather-info">
+            <div class="temperature">
+                <span class="temp-value">{{ weather.temperature | number: '1.0-0' }}°C</span>
+                <p class="description">{{ weather.description | titlecase}}</p>
+            </div>
+        </div>
+        <div class="additional-info">
+            <p><strong>Umidade:</strong> {{ weather.humidity }}%</p>
+            <p><strong>Vento:</strong> ~{{ weather.wind * 3.6 | number: '1.0-0' }} km/h</p>
+        </div>
+    </div>
+    <div *ngIf="loading">
+        <p><i class="fa fa-solid fa-spinner"></i> Carregando...</p>
+    </div>
+
+    <div *ngIf="!loading && error" class="error-message">
+        <p>{{error}}</p>
+    </div>
+</div>
+<div class="container" *ngIf="!loading && weather">
+    <div *ngFor="let dia of listForecast" class="box">
+        <p><strong>Horário:</strong> {{ dia.dt_txt | date:'H' }}h</p>
+        <div class="weather-info">
+            <div class="temperature">
+                <span class="temp-value">{{ dia.main.temp | number: '1.0-0' }}°C</span>
+                <p class="description">{{ dia.weather[0].description | titlecase}}</p>
+            </div>
+        </div>
+        <div class="additional-info">
+            <p><strong>Umidade:</strong> {{ dia.main.humidity }}%</p>
+            <p><strong>Vento:</strong> ~{{ dia.wind.speed * 3.6 | number: '1.0-0' }} km/h</p>
+        </div>
+    </div>
+</div>
+
+
+  
