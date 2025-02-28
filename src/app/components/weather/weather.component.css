@@ -54,8 +54,19 @@ input {
 .temp-value {
     font-size: 3rem;
     font-weight: 700;
+}
+
+.color-temp-high {
     color: #ff7f50;
-    }
+}
+
+.color-temp-avg {
+    color: #56a86a;
+}
+
+.color-temp-low {
+    color: #5087ff;
+}
 
 .description {
     font-size: 1.2rem;
@@ -142,4 +153,8 @@ label {
     border-radius: 30px;
     outline: none;
     transition: all 0.3s ease-in-out;
+}
+
+.title {
+    font-size: 48px;
 }

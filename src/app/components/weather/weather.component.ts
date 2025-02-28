@@ -35,7 +35,6 @@ export class WeatherComponent implements OnInit {
           this.weatherService.getWeatherForecast(this.weather.lat, this.weather.lon).subscribe(res => {
             this.loading = false;
             if (res) {
-              console.log(res)
               this.listForecast = res.list;
             } else {
               this.listForecast = [];

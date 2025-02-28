@@ -1,4 +1,4 @@
-<h1 class="weather-card" style="color:white;"><strong>OmniWeather</strong></h1>
+<h1 class="weather-card title" style="color:white;"><strong>OmniWeather</strong></h1>
 <div class="search-container">
     <input type="text" class="search-input" [(ngModel)]="city" (input)="onCityChange()" placeholder="Digite o nome da cidade" id="search-city">
 </div>
@@ -10,7 +10,7 @@
         </div>
         <div class="weather-info">
             <div class="temperature">
-                <span class="temp-value">{{ weather.temperature | number: '1.0-0' }}°C</span>
+                <span class="temp-value" [ngClass]="{'color-temp-high': weather.temperature > 27, 'color-temp-avg': (weather.temperature >= 23 && weather.temperature <= 27), 'color-temp-low': weather.temperature < 23}">{{ weather.temperature | number: '1.0-0' }}°C</span>
                 <p class="description">{{ weather.description | titlecase}}</p>
             </div>
         </div>
@@ -32,7 +32,7 @@
         <p><strong>Horário:</strong> {{ dia.dt_txt | date:'H' }}h</p>
         <div class="weather-info">
             <div class="temperature">
-                <span class="temp-value">{{ dia.main.temp | number: '1.0-0' }}°C</span>
+                <span class="temp-value" [ngClass]="{'color-temp-high': dia.main.temp > 27, 'color-temp-avg': (dia.main.temp >= 23 && dia.main.temp <= 27), 'color-temp-low': dia.main.temp < 23}">{{ dia.main.temp | number: '1.0-0' }}°C</span>
                 <p class="description">{{ dia.weather[0].description | titlecase}}</p>
             </div>
         </div>
